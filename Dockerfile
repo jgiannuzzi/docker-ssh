@@ -1,9 +1,7 @@
 FROM alpine:3.5
 
-# Install OpenSSH server
-RUN set -x \
- && apk add --no-cache openssh \
- && rm -rf /var/cache/apk/*
+# Install OpenSSH server and autossh
+RUN apk add --no-cache openssh autossh
 
 RUN set -x \
  && mkdir /root/.ssh \
